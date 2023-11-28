@@ -1,5 +1,10 @@
 return {
   {
+    enabled = false,
+    "folke/flash.nvim",
+  },
+
+  {
     event = "VeryLazy",
     "numToStr/Comment.nvim",
     opts = {

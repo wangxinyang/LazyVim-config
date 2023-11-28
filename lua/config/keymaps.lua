@@ -52,13 +52,13 @@ map("i", ";", ";<c-g>u")
 
 -- save file
 map({ "i", "v", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
-map("n", "<leader>w", "<cmd>w<cr>", { desc = "Save file" })
+-- map("n", "<leader>w", "<cmd>w<cr>", { desc = "Save file" })
 
 -- better indenting
 map("v", "<", "<gv")
 map("v", ">", ">gv")
-map("n", "<", "v<g")
-map("n", ">", "v>g")
+-- map("n", "<", "v<g")
+-- map("n", ">", "v>g")
 
 -- 取消 s 默认功能
 map("n", "s", "", opt)
@@ -77,8 +77,8 @@ map("n", "<leader>k", "<C-w>k", opt)
 map("n", "<leader>l", "<C-w>l", opt)
 
 -- bufferline 左右Tab切换
-map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
-map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
+-- map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
+-- map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
 
 -- 左右比例控制
 --map("n", "<C-h>", ":vertical resize -2<CR>", opt)
@@ -99,7 +99,7 @@ map("n", "<C-k>", "4k", opt)
 map("n", "<C-u>", "9k", opt)
 map("n", "<C-d>", "9j", opt)
 -- 退出
-map("n", "q", ":q<CR>", opt)
+-- map("n", "q", ":q<CR>", opt)
 map("n", "qq", ":q!<CR>", opt)
 map("n", "Q", ":qa!<CR>", opt)
 
@@ -114,10 +114,10 @@ map("n", "<leader>vt", ":vsp | terminal<CR>", opt)
 map("t", "<Esc>", "<C-\\><C-n>", opt)
 
 -- 关闭
-map("n", "<C-w>", ":Bdelete!<CR>", opt)
-map("n", "<leader>bl", ":BufferLineCloseRight<CR>", opt)
-map("n", "<leader>bh", ":BufferLineCloseLeft<CR>", opt)
-map("n", "<leader>bc", ":BufferLinePickClose<CR>", opt)
+-- map("n", "<C-w>", ":Bdelete!<CR>", opt)
+-- map("n", "<leader>bl", ":BufferLineCloseRight<CR>", opt)
+-- map("n", "<leader>bh", ":BufferLineCloseLeft<CR>", opt)
+-- map("n", "<leader>bc", ":BufferLinePickClose<CR>", opt)
 
 -- Trouble
 map("n", "<leader>xx", "<cmd>TroubleToggle<cr>", opt)
