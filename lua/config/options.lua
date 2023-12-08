@@ -23,7 +23,7 @@ vim.wo.cursorline = true
 -- 显示左侧图标指示列
 vim.wo.signcolumn = "yes"
 -- 右侧参考线，超过表示代码太长了，考虑换行
-vim.wo.colorcolumn = "140"
+vim.wo.colorcolumn = "120"
 -- 缩进4个空格等于一个Tab
 vim.o.smarttab = true
 vim.o.breakindent = true
@@ -70,7 +70,7 @@ vim.o.swapfile = false
 vim.o.updatetime = 300
 -- 设置 timeoutlen 为等待键盘快捷键连击时间500毫秒，可根据需要设置
 -- 遇到问题详见：https://github.com/nshen/learn-neovim-lua/issues/1
-vim.o.timeoutlen = 1000
+vim.o.timeoutlen = 500
 -- split window 从下边和右边出现
 vim.o.splitbelow = true
 vim.o.splitright = true
