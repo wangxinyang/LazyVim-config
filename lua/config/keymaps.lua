@@ -125,6 +125,13 @@ map("n", "<leader>xx", "<cmd>TroubleToggle<cr>", opt)
 -- Tagbar
 map("n", "<leader>xb", "<cmd>TagbarToggle<cr>", opt)
 
+-- Increment/decrement
+map("n", "+", "<C-a>")
+map("n", "-", "<C-x>")
+
+-- Select all
+map("n", "<C-a>", "gg<S-v>G", opt)
+
 -- go to definition
 map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opt)
 map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opt)
@@ -166,4 +173,4 @@ end, { desc = "Debug last go test" })
 --自动更新crates
 map("n", "<leader>ru", function()
   require("crates").upgrade_all_crates()
-end, opt)
+end, { desc = "Update crates" })

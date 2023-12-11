@@ -15,6 +15,7 @@ return {
   },
 
   -- Incremental rename
+  -- <leader>cr rename
   {
     "smjonas/inc-rename.nvim",
     cmd = "IncRename",
@@ -59,7 +60,7 @@ return {
   {
     "monaqa/dial.nvim",
     -- stylua: ignore
-    keys = {
+     keys = {
       { "<C-a>", function() return require("dial.map").inc_normal() end, expr = true, desc = "Increment" },
       { "<C-x>", function() return require("dial.map").dec_normal() end, expr = true, desc = "Decrement" },
     },
