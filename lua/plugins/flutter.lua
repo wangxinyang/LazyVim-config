@@ -33,8 +33,8 @@ return {
         },
         debugger = {
           enabled = true,
-          run_via_dap = false,
-          register_configurations = function(_)
+          run_via_dap = true,
+          --[[ register_configurations = function(_)
             local dap = require("dap")
             -- dap.adapters.dart = {
             --  type = "executable",
@@ -44,7 +44,7 @@ return {
             dap.set_log_level("TRACE")
             dap.configurations.dart = {}
             require("dap.ext.vscode").load_launchjs()
-          end,
+          end, ]]
         },
         dev_log = {
           enabled = false,
