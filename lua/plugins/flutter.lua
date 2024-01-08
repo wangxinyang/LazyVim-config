@@ -36,7 +36,7 @@ return {
         },
         debugger = {
           enabled = true,
-          run_via_dap = true,
+          run_via_dap = false,
           --[[ register_configurations = function(_)
             local dap = require("dap")
             -- dap.adapters.dart = {
