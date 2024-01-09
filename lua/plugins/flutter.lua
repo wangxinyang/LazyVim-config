@@ -50,8 +50,8 @@ return {
           end, ]]
         },
         dev_log = {
-          enabled = false,
-          -- open_cmd = "tabedit", -- command to use to open the log buffer
+          enabled = true,
+          open_cmd = "tabedit", -- command to use to open the log buffer
         },
         lsp = {
           color = { -- show the derived colours for dart variables

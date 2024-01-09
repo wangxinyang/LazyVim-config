@@ -26,7 +26,6 @@ return {
     cmd = "IncRename",
     config = true,
   },
-
   {
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -37,13 +36,11 @@ return {
       })
     end,
   },
-
   {
     "kevinhwang91/nvim-bqf",
     event = "VeryLazy",
     opts = {},
   },
-
   {
     "f-person/git-blame.nvim",
     event = "VeryLazy",
