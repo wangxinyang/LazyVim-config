@@ -2,7 +2,7 @@ local preview_stack_trace = function()
   local line = vim.api.nvim_get_current_line()
   local pattern = "package:[^/]+/([^:]+):(%d+):(%d+)"
   local filepath, line_nr, column_nr = string.match(line, pattern)
-  print(filepath, line_nr, column_nr)
+  filepath = "/lib/" .. filepath
   if filepath and line_nr and column_nr then
     vim.cmd(":wincmd k")
     vim.cmd("e " .. filepath)

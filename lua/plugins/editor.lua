@@ -99,6 +99,20 @@ return {
         end,
         desc = "Open File Browser with the path of the current buffer",
       },
+      {
+        ";ff",
+        function()
+          require("telescope").extensions.flutter.commands()
+        end,
+        desc = "Lists Flutter commands",
+      },
+      {
+        ";fv",
+        function()
+          require("telescope").extensions.flutter.fvm()
+        end,
+        desc = "Lists Flutter fvm sdk",
+      },
     },
     config = function(_, opts)
       local telescope = require("telescope")
@@ -157,6 +171,7 @@ return {
       telescope.setup(opts)
       require("telescope").load_extension("fzf")
       require("telescope").load_extension("file_browser")
+      require("telescope").load_extension("flutter")
     end,
   },
   {

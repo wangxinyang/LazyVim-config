@@ -55,10 +55,10 @@ return {
 
   {
     "rcarriga/nvim-notify",
-    --[[  opts = {
+    opts = {
       timeout = 5000,
-    }, ]]
-    config = function()
+    },
+    --[[ config = function()
       local notify = require("notify")
       vim.notify = notify
       notify.setup({
@@ -88,7 +88,7 @@ return {
         })
       end, opts)
       vim.keymap.set("n", "<LEADER>c;", notify.dismiss, opts)
-    end,
+    end, ]]
   },
 
   -- animations
