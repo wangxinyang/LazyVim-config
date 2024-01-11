@@ -159,7 +159,6 @@ return {
       require("telescope").load_extension("file_browser")
     end,
   },
-
   {
     "stevearc/conform.nvim",
     opts = {
