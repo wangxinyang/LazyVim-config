@@ -45,6 +45,7 @@ return {
     "f-person/git-blame.nvim",
     event = "VeryLazy",
   },
+  -- 同时多处编辑
   {
     "mg979/vim-visual-multi",
     branch = "master",
@@ -53,6 +54,14 @@ return {
       vim.g.VM_maps = {
         ["Find Under"] = "<C-n>",
       }
+    end,
+  },
+  {
+    "sustech-data/wildfire.nvim",
+    event = "VeryLazy",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    config = function()
+      require("wildfire").setup()
     end,
   },
 }
