@@ -56,10 +56,11 @@ return {
       }
     end,
   },
+  -- 快速选中内容
   {
     "sustech-data/wildfire.nvim",
     event = "VeryLazy",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    -- dependencies = { "nvim-treesitter/nvim-treesitter" },
     config = function()
       require("wildfire").setup()
     end,
