@@ -3,13 +3,6 @@ return {
   {
     "folke/noice.nvim",
     opts = function(_, opts)
-      table.insert(opts.routes, {
-        filter = {
-          event = "notify",
-          find = "No information available",
-        },
-        opts = { skip = true },
-      })
       local focused = true
       vim.api.nvim_create_autocmd("FocusGained", {
         callback = function()
@@ -21,6 +14,15 @@ return {
           focused = false
         end,
       })
+      -- 过滤不需要的message
+      opts.routes = {
+        {
+          filter = { event = "notify", find = "No information available" },
+          opts = { skip = true },
+        },
+      }
+
+      --TODO: 暂时保留
       table.insert(opts.routes, 1, {
         filter = {
           cond = function()
@@ -37,6 +39,12 @@ return {
           view = "split",
           opts = { enter = true, format = "details" },
           filter = {},
+        },
+      }
+      -- 合并消息，避免弹出很多的message窗口
+      opts.views = {
+        notify = {
+          merge = true,
         },
       }
 
