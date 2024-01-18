@@ -64,7 +64,7 @@ return {
   {
     "rcarriga/nvim-notify",
     opts = {
-      timeout = 5000,
+      timeout = 2000,
     },
     --[[ config = function()
       local notify = require("notify")
