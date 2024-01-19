@@ -17,6 +17,9 @@ return {
       -- 过滤不需要的message
       opts.routes = {
         {
+          filter = { event = "notify", max_height = 3, max_length = 150 },
+        },
+        {
           filter = { event = "notify", find = "No information available" },
           opts = { skip = true },
         },
