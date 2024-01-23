@@ -38,7 +38,7 @@ return {
         desc = "Search for a string in your current working directory and get results live as you type, respects .gitignore",
       },
       {
-        "\\\\",
+        ";b",
         function()
           local builtin = require("telescope.builtin")
           builtin.buffers()
@@ -70,12 +70,20 @@ return {
         desc = "Lists Diagnostics for all open buffers or a specific buffer",
       },
       {
-        ";s",
+        ";g",
         function()
           local builtin = require("telescope.builtin")
           builtin.treesitter()
         end,
         desc = "Lists Function names, variables, from Treesitter",
+      },
+      {
+        ";c",
+        function()
+          local builtin = require("telescope.builtin")
+          builtin.current_buffer_fuzzy_find()
+        end,
+        desc = "Live fuzzy search inside of the currently open buffer",
       },
       {
         "sf",
