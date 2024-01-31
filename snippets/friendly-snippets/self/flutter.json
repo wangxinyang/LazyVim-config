@@ -35,5 +35,14 @@
       "}"
     ],
     "description": "extends StatefulWidget template code"
+  },
+  "stateno": {
+    "prefix": "stateno",
+    "body": [
+      "final ${1}Provier = StateNotifierProvider<${2}, ${3}>((ref) {",
+      " return",
+      "});"
+    ],
+    "description": "riverpod state notifier provider boilerplate code"
   }
 }
