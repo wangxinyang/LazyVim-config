@@ -9,11 +9,28 @@
       "",
       " @override",
       " Widget build(BuildContext context) {",
-      "   return const Placeholder();",
+      "   return Container();",
       " }",
       "}"
     ],
-    "description": "extends StatelessWidget template code"
+    "description": "extends StatelessWidget boilerplate code"
+  },
+  "stlc": {
+    "prefix": "stlc",
+    "body": [
+      "import 'package:flutter/material.dart';",
+      "import 'package:flutter_riverpod/flutter_riverpod.dart';",
+      "",
+      "class ${1:MyWidget} extends ConsumerWidget {",
+      " const ${1:MyWidget}({super.key});",
+      "",
+      " @override",
+      " Widget build(BuildContext context, WidgetRef ref) {",
+      "   return Container();",
+      " }",
+      "}"
+    ],
+    "description": "riverpod stateless ConsumerWidget boilerplate code"
   },
   "stfu": {
     "prefix": "stfu",
@@ -34,10 +51,32 @@
       " }",
       "}"
     ],
-    "description": "extends StatefulWidget template code"
+    "description": "extends StatefulWidget boilerplate code"
   },
-  "stateno": {
-    "prefix": "stateno",
+  "stfuc": {
+    "prefix": "stfuc",
+    "body": [
+      "import 'package:flutter/material.dart';",
+      "import 'package:flutter_riverpod/flutter_riverpod.dart';",
+      "",
+      "class ${1:MyWidget} extends ConsumerStatefulWidget {",
+      " const ${1:MyWidget}({super.key});",
+      "",
+      " @override",
+      " ConsumerState<${1:MyWidget}> createState() => _${1:MyWidget}State();",
+      "}",
+      "",
+      "class _${1:MyWidget}State extends ConsumerState<${1:MyWidget}> {",
+      " @override",
+      " Widget build(BuildContext context) {",
+      "   return Container();",
+      " }",
+      "}"
+    ],
+    "description": "riverpod stateful boilerplate code"
+  },
+  "statenop": {
+    "prefix": "statenop",
     "body": [
       "final ${1}Provier = StateNotifierProvider<${2}, ${3}>((ref) {",
       " return",
