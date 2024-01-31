@@ -83,5 +83,14 @@
       "});"
     ],
     "description": "riverpod state notifier provider boilerplate code"
+  },
+  "futurep": {
+    "prefix": "futurep",
+    "body": [
+      "final ${1}Provier = FutureProvider<${2}>((ref) {",
+      " return",
+      "});"
+    ],
+    "description": "riverpod state notifier provider boilerplate code"
   }
 }
