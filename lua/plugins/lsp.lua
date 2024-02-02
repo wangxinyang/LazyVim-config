@@ -13,7 +13,7 @@ return {
         "css-lsp",
         "gopls",
         "codelldb",
-        "biome",
+        -- "biome",
       })
     end,
   },
