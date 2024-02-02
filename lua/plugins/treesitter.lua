@@ -8,6 +8,7 @@ return {
         "astro",
         "cmake",
         "cpp",
+        "html",
         "css",
         "fish",
         "gitignore",
