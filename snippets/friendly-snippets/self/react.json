@@ -1,0 +1,12 @@
+{
+  "rcms": {
+    "prefix": "rcms",
+    "body": ["{/* */}"],
+    "description": "single comment in jsx or tsx"
+  },
+  "rcmm": {
+    "prefix": "rcmm",
+    "body": ["{/** */}"],
+    "description": "multi comments in jsx or tsx"
+  }
+}

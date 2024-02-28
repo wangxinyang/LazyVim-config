@@ -160,10 +160,6 @@
         "path": "./self/rust.json"
       },
       {
-        "language": "dart",
-        "path": "./self/flutter.json"
-      },
-      {
         "language": "rust",
         "path": "./snippets/frameworks/relm4/templates.json"
       },
@@ -174,6 +170,17 @@
       {
         "language": "rust",
         "path": "./snippets/frameworks/relm4/components.json"
+      },
+      {
+        "language": [
+          "javascriptreact",
+          "typescriptreact"
+        ],
+        "path": "./self/react.json"
+      },
+      {
+        "language": "dart",
+        "path": "./self/flutter.json"
       },
       {
         "language": "haskell",
