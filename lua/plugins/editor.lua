@@ -121,6 +121,13 @@ return {
         end,
         desc = "Lists Flutter fvm sdk",
       },
+      {
+        ";n",
+        function()
+          require("telescope").extensions.notify.notify()
+        end,
+        desc = "Lists Notifications",
+      },
     },
     config = function(_, opts)
       local telescope = require("telescope")
@@ -180,6 +187,7 @@ return {
       require("telescope").load_extension("fzf")
       require("telescope").load_extension("file_browser")
       require("telescope").load_extension("flutter")
+      require("telescope").load_extension("notify")
     end,
   },
   {

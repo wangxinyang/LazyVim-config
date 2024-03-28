@@ -60,14 +60,26 @@ return {
         end,
       })
 
+      opts.messages = {
+        enable = false,
+      }
       opts.presets.lsp_doc_border = true
+      opts.presets.bottom_search = false
+      opts.presets.long_message_to_split = true
+      opts.presets.command_palette = true
     end,
   },
 
   {
     "rcarriga/nvim-notify",
     opts = {
-      timeout = 2000,
+      title = "tosei",
+      timeout = 1000,
+      max_width = 100,
+      render = "wrapped-compact",
+      stages = "static",
+      top_down = false,
+      fps = 60,
     },
     --[[ config = function()
       local notify = require("notify")
