@@ -1,77 +1,100 @@
 return {
   {
-    event = "VeryLazy",
-    "simrat39/rust-tools.nvim",
-    ft = "rust",
-    dependencies = "neovim/nvim-lspconfig",
-    opts = function()
-      local rt = require("rust-tools")
-      local mason_registry = require("mason-registry")
-      local codelldb = mason_registry.get_package("codelldb")
-      local extension_path = codelldb:get_install_path() .. "/extension/"
-      local codelldb_path = extension_path .. "adapter/codelldb"
-      local liblldb_path = extension_path .. "lldb/lib/liblldb.dylib"
-      return {
-        dap = {
-          adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
-        },
-        server = {
-          on_attach = function(_, bufnr)
-            -- Hover actions
-            vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
-            -- Code actiuon groups
-            vim.keymap.set("n", "<leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
-          end,
-          -- capabilities = capabilities,
-          rust_analyzer = {
-            settings = {
-              ["rust-analyzer"] = {
-                cargo = {
-                  allFeatures = true,
-                  loadOutDirsFromCheck = true,
-                  runBuildScripts = true,
-                },
-                -- Add clippy lints for Rust.
-                checkOnSave = {
-                  allFeatures = true,
-                  command = "clippy",
-                  extraArgs = { "--no-deps" },
-                },
-                procMacro = {
-                  enable = true,
-                  ignored = {
-                    ["async-trait"] = { "async_trait" },
-                    ["napi-derive"] = { "napi" },
-                    ["async-recursion"] = { "async_recursion" },
-                    leptos_macro = {
-                      -- optional: --
-                      -- "component",
-                      "server",
-                    },
-                  },
-                },
+    "mrcjkb/rustaceanvim",
+    version = "^4", -- Recommended
+    ft = { "rust" },
+    opts = {
+      server = {
+        on_attach = function(_, bufnr)
+          vim.keymap.set("n", "<leader>cR", function()
+            vim.cmd.RustLsp("codeAction")
+          end, { desc = "Code Action", buffer = bufnr })
+          vim.keymap.set("n", "<leader>dr", function()
+            vim.cmd.RustLsp("debuggables")
+          end, { desc = "Rust Debuggables", buffer = bufnr })
+        end,
+        default_settings = {
+          -- rust-analyzer language server configuration
+          ["rust-analyzer"] = {
+            cargo = {
+              allFeatures = true,
+              loadOutDirsFromCheck = true,
+              runBuildScripts = true,
+            },
+            -- Add clippy lints for Rust.
+            checkOnSave = {
+              allFeatures = true,
+              command = "clippy",
+              extraArgs = { "--no-deps" },
+            },
+            procMacro = {
+              enable = true,
+              ignored = {
+                ["async-trait"] = { "async_trait" },
+                ["napi-derive"] = { "napi" },
+                ["async-recursion"] = { "async_recursion" },
               },
+            },
+            rustfmt = {
+              overrideCommand = { "leptosfmt", "--stdin", "--rustfmt" },
             },
           },
         },
-        tools = {
-          hover_actions = {
-            auto_focus = true,
-          },
-          on_initialized = function()
-            vim.cmd([[
-                augroup RustLSP
-                autocmd CursorHold                      *.rs silent! lua vim.lsp.buf.document_highlight()
-                autocmd CursorMoved,InsertEnter         *.rs silent! lua vim.lsp.buf.clear_references()
-                autocmd BufEnter,CursorHold,InsertLeave *.rs silent! lua vim.lsp.codelens.refresh()
-                augroup END
-                ]])
-          end,
-        },
-      }
-    end,
+      },
+    },
     config = function(_, opts)
-      require("rust-tools").setup(opts)
+      vim.g.rustaceanvim = vim.tbl_deep_extend("keep", vim.g.rustaceanvim or {}, opts or {})
     end,
+  },
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        rust_analyzer = {},
+        taplo = {
+          keys = {
+            {
+              "K",
+              function()
+                if vim.fn.expand("%:t") == "Cargo.toml" and require("crates").popup_available() then
+                  require("crates").show_popup()
+                else
+                  vim.lsp.buf.hover()
+                end
+              end,
+              desc = "Show Crate Documentation",
+            },
+          },
+        },
+        tailwindcss = {
+          -- filetypes_include = { "rs" },
+          filetypes = {
+            "css",
+            "scss",
+            "sass",
+            "postcss",
+            "html",
+            "javascript",
+            "javascriptreact",
+            "typescript",
+            "typescriptreact",
+            "svelte",
+            "vue",
+            "rust",
+          },
+          init_options = {
+            -- There you can set languages to be considered as different ones by tailwind lsp I guess same as includeLanguages in VSCod
+            userLanguages = {
+              rust = "html",
+            },
+          },
+        },
+      },
+      setup = {
+        rust_analyzer = function()
+          return true
+        end,
+      },
+    },
   },
 }
