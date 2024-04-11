@@ -37,6 +37,7 @@ return {
           normal = "ma",
           change = "mr",
           delete = "md",
+          visual = "ma",
         },
       })
     end,
