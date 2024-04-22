@@ -23,6 +23,10 @@ return {
         "svelte",
       },
 
+      highlight = {
+        enable = true,
+      },
+
       -- matchup = {
       -- 	enable = true,
       -- },
@@ -50,30 +54,6 @@ return {
           update = "R",
           goto_node = "<cr>",
           show_help = "?",
-        },
-      },
-
-      autotag = {
-        enable = true,
-        filetypes = {
-          "html",
-          "javascript",
-          "typescript",
-          "javascriptreact",
-          "typescriptreact",
-          "svelte",
-          "vue",
-          "tsx",
-          "jsx",
-          "rescript",
-          "xml",
-          "php",
-          "markdown",
-          "astro",
-          "glimmer",
-          "handlebars",
-          "hbs",
-          "rust",
         },
       },
     },
