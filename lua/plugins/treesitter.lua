@@ -52,7 +52,32 @@ return {
           show_help = "?",
         },
       },
+
+      autotag = {
+        enable = true,
+        filetypes = {
+          "html",
+          "javascript",
+          "typescript",
+          "javascriptreact",
+          "typescriptreact",
+          "svelte",
+          "vue",
+          "tsx",
+          "jsx",
+          "rescript",
+          "xml",
+          "php",
+          "markdown",
+          "astro",
+          "glimmer",
+          "handlebars",
+          "hbs",
+          "rust",
+        },
+      },
     },
+    build = ":TSUpdate",
     config = function(_, opts)
       require("nvim-treesitter.configs").setup(opts)
 
@@ -63,6 +88,14 @@ return {
         },
       })
       vim.treesitter.language.register("markdown", "mdx")
+    end,
+  },
+  {
+    "rayliwell/tree-sitter-rstml",
+    dependencies = { "nvim-treesitter" },
+    build = ":TSUpdate",
+    config = function()
+      require("tree-sitter-rstml").setup()
     end,
   },
 }

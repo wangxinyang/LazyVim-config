@@ -36,10 +36,9 @@ return {
               },
             },
             -- format rust代码的时候需要注释掉下面的代码，使用leptos的时候打开
-            --[[ rustfmt = {
-              -- overrideCommand = { "--stdin", "--rustfmt" },
-              overrideCommand = { "leptosfmt", "--stdin", "--rustfmt" },
-            }, ]]
+            -- rustfmt = {
+            -- overrideCommand = { "leptosfmt", "--stdin", "--rustfmt" },
+            -- },
           },
         },
       },
