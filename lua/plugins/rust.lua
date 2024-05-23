@@ -91,6 +91,9 @@ return {
           },
         },
       },
+      inlay_hints = {
+        enabled = true,
+      },
       setup = {
         rust_analyzer = function()
           return true
