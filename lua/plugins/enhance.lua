@@ -14,13 +14,6 @@ return {
       },
     },
   },
-  -- Incremental rename
-  -- <leader>cr rename
-  {
-    "smjonas/inc-rename.nvim",
-    cmd = "IncRename",
-    config = true,
-  },
   {
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
