@@ -86,13 +86,13 @@ map("n", "<leader>l", "<C-w>l", opt)
 -- 左右比例控制
 --map("n", "<C-h>", ":vertical resize -2<CR>", opt)
 --map("n", "<C-l>", ":vertical resize +2<CR>", opt)
-map("n", "s,", ":vertical resize -20<CR>", opt)
-map("n", "s.", ":vertical resize +20<CR>", opt)
+map("n", "s.", ":vertical resize -20<CR>", opt)
+map("n", "s,", ":vertical resize +20<CR>", opt)
 -- 上下比例
 map("n", "sj", ":resize +10<CR>", opt)
 map("n", "sk", ":resize -10<CR>", opt)
-map("n", "<C-Down>", ":resize +2<CR>", opt)
-map("n", "<C-Up>", ":resize -2<CR>", opt)
+map("n", "<C-Up>", ":resize +2<CR>", opt)
+map("n", "<C-Down>", ":resize -2<CR>", opt)
 -- 等比例
 map("n", "s=", "<C-w>=", opt)
 -- 上下滚动浏览
