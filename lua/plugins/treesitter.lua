@@ -21,6 +21,15 @@ return {
         "scss",
         "sql",
         "svelte",
+        "tsx",
+        "typescript",
+        "jsx",
+        "javascript",
+        "xml",
+        "yaml",
+        "toml",
+        "query",
+        "regex",
       },
 
       highlight = {
@@ -55,6 +64,9 @@ return {
           goto_node = "<cr>",
           show_help = "?",
         },
+      },
+      autotag = {
+        enable = true,
       },
     },
     build = ":TSUpdate",
